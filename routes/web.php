@@ -10,7 +10,7 @@ use App\Http\Controllers\Admin\PermissionController;
 
 
 
-route::get('admin-dashbaord', [ DashboardController::class,  'showAdminDashboard' ])-> name('admin.dashboard'); 
+route::get('admin-dashboard', [ DashboardController::class,  'showAdminDashboard' ])-> name('admin.dashboard'); 
 route::get('admin-login', [ LoginController::class,  'showLoginForm' ])-> name('admin.login');  
 
 
