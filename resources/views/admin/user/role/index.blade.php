@@ -33,54 +33,74 @@
                                     <td>#</td>
                                     <td>Name</td>
                                     <td>Slug</td>
+                                    <td>Permissions</td>
                                     <td>Created At</td>
                                     <td>Action</td>
                                 </tr>
                             </thead>
                             <tbody>
+
+                                @forelse ($roles as $item)
                                 <tr>
                                     <td>1</td>
-                                    <td>Slider</td>
-                                    <td>slider</td>
-                                    <td>10 min ago</td>
+                                    <td>{{ $item -> name }}</td>
+                                    <td>{{ $item -> slug }}</td>
+                                    <td>
+                                        <ul>
+                                            @forelse (json_decode($item -> permission) as $per)
+                                              <li>{{ $per }}</li>
+                                            @empty
+                                            <li>No data founds</li>
+                                            @endforelse
+                                        </ul>
+                                    </td>
+                                    <td>{{ $item -> created_at -> diffForHumans() }}</td>
                                     <td>
                                         {{-- <a class="btn btn-sm btn-info" href="#"><i class="fe fe-eye"></i></a> --}}
                                         <a class="btn btn-sm btn-warning" href="#"><i class="fe fe-edit"></i></a>
                                         <a class="btn btn-sm btn-danger" href="#"><i class="fe fe-trash"></i></a>
                                     </td>
                                 </tr>
+                                @empty
+                                    
+                                @endforelse
+                            
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
+
+
+
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">Add new Role</h4>
                     </div>
                     <div class="card-body">
-                        <form action="#">
+                        @include('validate.error')
+                        @include('validate.success')
+                        <form action="{{ route('admin.role.store') }}" method="POST">
+                            @csrf
                             <div class="form-group">
                                 <label>Role Name</label>
-                                <input type="text" class="form-control">
+                                <input name="name" type="text" class="form-control">
                             </div>
 
                             <div class="form-group">
                                 <label>Permissions</label>
                                 <hr>
-                                <label class="d-block">
-                                    <input type="checkbox">
-                                    Slider
-                                </label>
-                                <label class="d-block">
-                                    <input type="checkbox">
-                                    Settings
-                                </label>
-                                <label class="d-block">
-                                    <input type="checkbox">
-                                    Users
-                                </label>
+                                @forelse ($permissions as $item)
+                                    <label class="d-block">
+                                        <input name="per[]" value="{{ $item -> name }}" type="checkbox">
+                                        {{ $item -> name }}
+                                    </label>
+                                @empty
+                                    <p>No permission found</p>
+                                @endforelse
+                                
+                                
 
                                 
 
