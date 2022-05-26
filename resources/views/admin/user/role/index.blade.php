@@ -52,7 +52,7 @@
                                             @forelse (json_decode($item -> permission) as $per)
                                               <li>{{ $per }}</li>
                                             @empty
-                                            <li>No data founds</li>
+                                            <li style="list-style:none;">No permission found</li>
                                             @endforelse
                                         </ul>
                                     </td>
@@ -64,7 +64,9 @@
                                     </td>
                                 </tr>
                                 @empty
-                                    
+                                    <tr>
+                                        <td  colspan="6" class="text-center">No roles data found</td>
+                                    </tr>
                                 @endforelse
                             
                             </tbody>

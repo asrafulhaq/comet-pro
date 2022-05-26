@@ -2,8 +2,11 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Role;
+use App\Models\Admin;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,5 +23,24 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+
+        Role::create([
+            'name'          => 'Admin',
+            'slug'          => 'admin',
+            'permission'    => json_encode([]) 
+        ]);
+
+
+        Admin::create([
+            'role_id'       => 1, 
+            'name'          => 'Super Admin', 
+            'email'         => 'admin@admin.com',  
+            'cell'          => '01717700811', 
+            'username'      => 'super', 
+            'password'      => Hash::make('1234567890') 
+        ]);
+
+
     }
 }

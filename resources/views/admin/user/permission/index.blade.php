@@ -53,7 +53,7 @@
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td>No data founds</td>
+                                        <td colspan="5" class="text-center">No permission founds</td>
                                     </tr>
                                 @endforelse
                                 
