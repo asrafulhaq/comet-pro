@@ -25,6 +25,9 @@ Route::post('permission-update/{id}', [ PermissionController::class, 'update' ])
 // role 
 Route::get('role', [ RoleController::class, 'index' ]) -> name('admin.role'); 
 Route::post('role', [ RoleController::class, 'store' ]) -> name('admin.role.store'); 
+Route::get('role-delete/{id}', [ RoleController::class, 'destroy' ]) -> name('admin.role.destroy');  
+Route::get('role-edit/{id}', [ RoleController::class, 'edit' ]) -> name('admin.role.edit');  
+Route::post('role-update/{id}', [ RoleController::class, 'update' ]) -> name('admin.role.update');   
 
 // role 
 Route::get('admin-create', [ AdminController::class, 'index' ]) -> name('admin.create');   
