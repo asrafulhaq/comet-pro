@@ -20,6 +20,10 @@
                         <li><a href="{{ route('admin.permission') }}"> Permission </a></li>
                     </ul>
                 </li>
+
+                <li>  
+                    <a href="{{ route('admin.logout.system') }}"><i class="fe fe-logout"></i> <span>Logout</span></a>
+                </li>
             </ul>
         </div>
     </div>
