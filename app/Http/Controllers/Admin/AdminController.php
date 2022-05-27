@@ -57,7 +57,17 @@ class AdminController extends Controller
     public function destroy($id)
     {
         $delete_data = Admin::findOrFail($id);
-        $delete_data -> delete();
-        return redirect() -> route('admin.all') -> with('success-main','Admin data deleted');
+
+
+        if( $delete_data -> email == 'admin@admin.com' ){
+            return redirect() -> route('admin.all') -> with('error-main','You can not delete super admin data');
+        }else{
+            $delete_data -> delete();
+            return redirect() -> route('admin.all') -> with('success-main','Admin data deleted');
+        }
+
+        
+
+
     }
 }
