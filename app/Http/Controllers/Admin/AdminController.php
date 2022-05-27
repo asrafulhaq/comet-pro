@@ -49,4 +49,15 @@ class AdminController extends Controller
 
         return redirect() -> route('admin.all') -> with('success','Admin users created successful');
     }
+
+
+    /**
+     * Admin data delete 
+     */
+    public function destroy($id)
+    {
+        $delete_data = Admin::findOrFail($id);
+        $delete_data -> delete();
+        return redirect() -> route('admin.all') -> with('success-main','Admin data deleted');
+    }
 }

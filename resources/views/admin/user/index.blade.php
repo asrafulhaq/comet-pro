@@ -27,6 +27,7 @@
                         <h4 class="card-title">All Users</h4>
                     </div>
                     <div class="card-body">
+                        @include('validate.success-main')
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -52,7 +53,7 @@
                                     <td>
                                         {{-- <a class="btn btn-sm btn-info" href="#"><i class="fe fe-eye"></i></a> --}}
                                         <a class="btn btn-sm btn-warning" href="#"><i class="fe fe-edit"></i></a>
-                                        <a class="btn btn-sm btn-danger" href="#"><i class="fe fe-trash"></i></a>
+                                        <a class="btn btn-sm btn-danger delete-btn" href="{{ route('admin.destroy', $item -> id ) }}"><i class="fe fe-trash"></i></a>
                                     </td>
                                 </tr>
                                 @empty
@@ -121,6 +122,7 @@
     
 </div>
 <!-- /Page Wrapper -->
+
 
 
 @endsection 
