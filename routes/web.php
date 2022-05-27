@@ -33,3 +33,5 @@ Route::post('role-update/{id}', [ RoleController::class, 'update' ]) -> name('ad
 Route::get('admin-all', [ AdminController::class, 'index' ]) -> name('admin.all');   
 Route::post('admin-store', [ AdminController::class, 'store' ]) -> name('admin.store');   
 Route::get('admin-delete/{id}', [ AdminController::class, 'destroy' ]) -> name('admin.destroy');    
+Route::get('admin-edit/{id}', [ AdminController::class, 'edit' ]) -> name('admin.edit');    
+Route::post('admin-update/{id}', [ AdminController::class, 'update' ]) -> name('admin.update');    

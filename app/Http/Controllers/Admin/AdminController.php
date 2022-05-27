@@ -25,6 +25,24 @@ class AdminController extends Controller
         ]);
     }
 
+
+         /**
+     * Show all Roles 
+     */
+
+    public function edit($id)
+    {
+        $roles = Role::latest()->get(); 
+        $admins = Admin::latest() -> get();
+        $admin = Admin::findOrFail($id);
+        return view('admin.user.index', [
+            'all_data'  => $admins,
+            'type'      => 'edit',
+            'roles'     => $roles, 
+            'admin'     => $admin 
+        ]);
+    }
+
     /**
      * User Data Store
      */
@@ -69,5 +87,23 @@ class AdminController extends Controller
         
 
 
+    }
+
+    /**
+     * Admin user ata updated 
+     */
+    public function update(Request $request, $id)
+    {
+        $edit_data = Admin::findOrFail($id);
+        $edit_data -> update([
+            'name'              => $request -> name,
+            'role_id'           => $request -> role,
+            'email'             => $request -> email,
+            'cell'              => $request -> cell,
+            'username'          => $request -> username,
+            'photo'             => 'avatar.webp'
+        ]);
+
+        return redirect() -> route('admin.all') -> with('success-main','Admin data Updated');
     }
 }
