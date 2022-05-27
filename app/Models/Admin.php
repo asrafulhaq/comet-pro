@@ -11,5 +11,11 @@ class Admin extends Model
 
     protected $guarded = [];
 
+
+    public function humayon()
+    {
+        return $this -> belongsTo(Role::class, 'role_id', 'id'); 
+    }
+
     
 }
