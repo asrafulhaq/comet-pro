@@ -45,7 +45,7 @@ class PermissionController extends Controller
     {
         // valication
         $this -> validate($request, [
-            'name'      => 'required'
+            'name'      => 'required|unique:permissions'
         ]);
 
         Permission::create([
