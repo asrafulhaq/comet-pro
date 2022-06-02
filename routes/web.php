@@ -55,7 +55,11 @@ Route::group([ 'middleware' => 'admin' ], function(){
     
     // user profile routes
     Route::get('admin-profile', [ ProfileController::class, 'showAdminProfilePage' ]) -> name('admin.profile'); 
+    Route::post('admin-profile-photo-uplaod/{id}', [ ProfileController::class, 'uplaodProfilePhoto' ]) -> name('admin.profile.photo.upload'); 
+    Route::post('admin-password-change/{id}', [ ProfileController::class, 'passwordChange' ]) -> name('admin.password.change'); 
     
+
+
     
 });
 
