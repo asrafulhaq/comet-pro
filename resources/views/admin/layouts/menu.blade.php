@@ -10,7 +10,23 @@
                 <li>  
                     <a href="appointment-list.html"><i class="fe fe-layout"></i> <span>Slider</span></a>
                 </li>
-
+                <li>  
+                    <a href="appointment-list.html"><i class="fe fe-layout"></i> <span>Clients</span></a>
+                </li>
+                <li>  
+                    <a href="appointment-list.html"><i class="fe fe-layout"></i> <span>Testimonials</span></a>
+                </li>
+                <li>  
+                    <a href="appointment-list.html"><i class="fe fe-layout"></i> <span>Our Team</span></a>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="fe fe-users"></i> <span> Posts </span> <span class="menu-arrow"></span></a>
+                    <ul style="display: none;">
+                        <li><a href="{{ route('admin.all') }}"> Posts </a></li>
+                        <li><a href="{{ route('admin.role') }}"> Category </a></li>
+                        <li><a href="{{ route('admin.permission') }}"> Tag </a></li>
+                    </ul>
+                </li>
                 
                 <li class="submenu">
                     <a href="#"><i class="fe fe-users"></i> <span> Admin User </span> <span class="menu-arrow"></span></a>
@@ -19,6 +35,10 @@
                         <li><a href="{{ route('admin.role') }}"> Role </a></li>
                         <li><a href="{{ route('admin.permission') }}"> Permission </a></li>
                     </ul>
+                </li>
+
+                <li>  
+                    <a href="appointment-list.html"><i class="fe fe-layout"></i> <span>Settings</span></a>
                 </li>
 
                 <li>  
