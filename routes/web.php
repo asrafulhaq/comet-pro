@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\LoginController;
@@ -58,6 +59,11 @@ Route::group([ 'middleware' => 'admin' ], function(){
     Route::post('admin-profile-photo-uplaod/{id}', [ ProfileController::class, 'uplaodProfilePhoto' ]) -> name('admin.profile.photo.upload'); 
     Route::post('admin-password-change/{id}', [ ProfileController::class, 'passwordChange' ]) -> name('admin.password.change'); 
     
+ 
+    // Tags  Routes
+    Route::get('post-tags', [ TagController::class, 'index' ]) -> name('post.tag.index');
+    Route::post('post-tags', [ TagController::class, 'store' ]) -> name('post.tag.store');
+
 
 
     
