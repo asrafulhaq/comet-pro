@@ -13,7 +13,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">All permissions</h4>
+                        <h4 class="card-title">All Category</h4>
                     </div>
                     <div class="card-body">
                         @include('validate.success-main')
@@ -56,7 +56,7 @@
                 @if( $form_type === 'add' )
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Add new Permission</h4>
+                        <h4 class="card-title">Add new Category</h4>
                     </div>
                     <div class="card-body">
 
@@ -67,10 +67,10 @@
                             <p class="alert alert-success">{{ Session::get('success') }}<button class="close" data-dismiss="alert">&times;</button></p> 
                         @endif
 
-                        <form action="{{ route('admin.permission.store') }}" method="POST"> 
+                        <form action="{{ route('post.category.store') }}" method="POST"> 
                             @csrf
                             <div class="form-group">
-                                <label>Permission Name</label>
+                                <label>Name</label>
                                 <input name="name" type="text" class="form-control">
                             </div>
      

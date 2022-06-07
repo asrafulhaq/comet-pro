@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController; 
 use App\Http\Controllers\Admin\PermissionController;
 
@@ -63,6 +64,16 @@ Route::group([ 'middleware' => 'admin' ], function(){
     // Tags  Routes
     Route::get('post-tags', [ TagController::class, 'index' ]) -> name('post.tag.index');
     Route::post('post-tags', [ TagController::class, 'store' ]) -> name('post.tag.store');
+
+
+
+    // Category  Routes
+    Route::get('post-category', [ CategoryController::class, 'index' ]) -> name('post.category.index');
+    Route::post('post-category', [ CategoryController::class, 'store' ]) -> name('post.category.store'); 
+
+
+
+    
 
 
 
