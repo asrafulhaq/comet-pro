@@ -76,7 +76,7 @@ class RoleController extends Controller
      {
 
         $this -> validate($request, [
-            'name'  => 'required|unique:roles'
+            'name'  => 'required'
         ]);
 
 
