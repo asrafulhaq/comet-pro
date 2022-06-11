@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\TagController;
+use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\LoginController;
@@ -70,6 +71,11 @@ Route::group([ 'middleware' => 'admin' ], function(){
     // Category  Routes
     Route::get('post-category', [ CategoryController::class, 'index' ]) -> name('post.category.index');
     Route::post('post-category', [ CategoryController::class, 'store' ]) -> name('post.category.store'); 
+
+     // Category  Routes
+     Route::get('post', [ PostController::class, 'index' ]) -> name('post.index');
+     Route::get('post-create', [ PostController::class, 'create' ]) -> name('post.create');
+     Route::post('post', [ PostController::class, 'store' ]) -> name('post.store');
 
 
 

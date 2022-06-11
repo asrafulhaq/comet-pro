@@ -27,6 +27,9 @@
 			<script src="{{ asset('admin/assets/js/html5shiv.min.js') }}"></script>
 			<script src="{{ asset('admin/assets/js/respond.min.js') }}"></script>
 		<![endif]-->
+		<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+		
+		
     </head>
     <body>
 	
@@ -58,9 +61,18 @@
 		<script src="{{ asset('admin/assets/plugins/raphael/raphael.min.js') }}"></script>    
 		<script src="{{ asset('admin/assets/plugins/morris/morris.min.js') }}"></script>  
 		<script src="{{ asset('admin/assets/js/chart.morris.js') }}"></script>
-		
+		 
 		<!-- Custom JS -->
-		<script  src="{{ asset('admin/assets/js/script.js') }}"></script>
+		<script  src="{{ asset('admin/assets/ckeditor/ckeditor.js') }}"></script>
+		<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+		<script>	
+			CKEDITOR.replace( 'post_editor');
+
+			$(document).ready(function() {
+				$('#tags').select2(); 
+			});
+		</script>
 		
     </body>
 

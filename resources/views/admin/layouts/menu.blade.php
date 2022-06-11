@@ -36,7 +36,7 @@
                 <li class="submenu">
                     <a href="#"><i class="fe fe-users"></i> <span> Posts </span> <span class="menu-arrow"></span></a>
                     <ul style="display: none;">
-                        <li><a href="{{ route('admin.all') }}"> Posts </a></li>
+                        <li><a href="{{ route('post.index') }}"> Posts </a></li>
                         <li><a href="{{ route('post.category.index') }}"> Category </a></li>
                         <li><a href="{{ route('post.tag.index') }}"> Tag </a></li>
                     </ul>
